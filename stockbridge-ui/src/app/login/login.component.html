@@ -1,0 +1,15 @@
+<form #loginForm="ngForm" (ngSubmit)="onLogin()">
+    <img src="../assets/logo11.png" alt="Stockbridge" class="img-fluid" />
+    <div class="form-group">
+        <label for="username">User name: </label>
+        <input id="username" name="username" [(ngModel)]="loginModel.username" placeholder="Please enter your username"
+            class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input id="password" name="password" [(ngModel)]="loginModel.password" placeholder="Please enter your password"
+            type="password" class="form-control" required />
+    </div>
+    <button title="Login" class="btn btn-primary" type="submit">Login</button>
+    <div *ngIf="wrongCredentials" class="alert alert-danger">Please check your credentials.</div>
+</form>
